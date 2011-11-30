@@ -14,5 +14,3 @@ Features:
  * sexy admin skin, thanks to Grappelli
  * web i18n management with django-rosetta (now with Grappelli integration!)
  * basic templates using parts of HTML5 Boilerplate
- 
-Use it if you want, but for your own risk ;)
