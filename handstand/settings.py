@@ -146,6 +146,8 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'rosetta-grappelli',
     'rosetta',
+
+    'users',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -176,6 +178,10 @@ LOGGING = {
         },
     }
 }
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/users/login/'
+LOGOUT_URL = '/users/logout/'
 
 INTERNAL_IPS = ('127.0.0.1',)
 

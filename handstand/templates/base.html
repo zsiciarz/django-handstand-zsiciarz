@@ -19,15 +19,54 @@
 
 <body>
   <header>
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="{% url 'main' %}">handstand</a>
+          <ul class="nav">
+            <li class="active"><a href="{% url 'main' %}">{% trans 'Home' %}</a></li>
+            <li><a href="#">{% trans 'About' %}</a></li>
+            {% if user.is_staff %}
+              <li><a href="{% url 'admin:index' %}">{% trans 'Administration' %}</a></li>
+              <li><a href="{% url 'rosetta-home' %}">{% trans 'Translation' %}</a></li>
+            {% endif %}
+          </ul>
+          {% if user.is_authenticated %}
+          <ul class="nav secondary-nav">
+            <li class="pull-right"><a href="{% url 'users-logout' %}">{% trans 'Log out' %}</a></li>
+          </ul>
+          {% else %}
+            <form action="{% url 'users-login' %}" method="post" class="pull-right">
+              {% csrf_token %}
+              <input class="input-small" type="text" name="username" placeholder="{% trans 'Username' %}">
+              <input class="input-small" type="password" name="password" placeholder="{% trans 'Password' %}">
+              <button class="btn" type="submit">{% trans 'Log in' %}</button>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
   </header>
-  <div role="main">
-    {% block content %}{% endblock %}
-  </div>
-  <footer>
 
-  </footer>
+  <div class="container">
+    <div class="content" role="main">
+      <div class="page-header">
+        <h1>handstand</h1>
+      </div>
+      <div class="row">
+        <div class="span16">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+    <footer>
+    <p>&copy; <a href="http://siciarz.net">Zbigniew Siciarz</a> 2011</p>
+    </footer>
+  </div> <!-- /container -->
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.7.0.min.js"><\/script>')</script>
+  <script defer src="{{ STATIC_URL }}js/libs/bootstrap-alerts.js"></script>
   <script defer src="{{ STATIC_URL }}js/plugins.js"></script>
   <script defer src="{{ STATIC_URL }}js/script.js"></script>
   {% block extra-script %}{% endblock %}
