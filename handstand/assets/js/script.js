@@ -1,7 +1,7 @@
 (function ($) {
 
     $(document).ready(function () {
-        $(".alert-message").alert();
+        // move along
     });
 
 })(jQuery);
