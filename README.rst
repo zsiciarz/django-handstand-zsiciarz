@@ -7,7 +7,7 @@ this is my personal starter for Django projects.
 
 Features:
 
- * Django 1.4 (pre-alpha at the moment)
+ * Django 1.4
  * South
  * django-debug-toolbar
  * django-extensions
