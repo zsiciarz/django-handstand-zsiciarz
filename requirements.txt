@@ -1,9 +1,9 @@
 Django==1.4
-South==0.7.4
+South==0.7.5
 Werkzeug==0.8.3
 django-debug-toolbar==0.9.4
 django-extensions==0.8
-django-grappelli==2.3.7
-django-rosetta==0.6.6
+django-grappelli==2.3.8
+django-rosetta==0.6.8
 django-rosetta-grappelli==1.0.1
-docutils==0.8.1
+docutils==0.9.1
