@@ -2,4 +2,5 @@
 *.py[co]
 *.db
 .settings
+*.swp
 
